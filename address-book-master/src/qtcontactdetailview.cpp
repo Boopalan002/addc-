@@ -18,8 +18,10 @@ QtContactDetailView::QtContactDetailView(AddressBookModel& model,
     contactForm->firstNameField->setReadOnly(true);
     contactForm->lastNameField->setReadOnly(true);
     contactForm->addressField->setReadOnly(true);
+    contactForm->cityField->setReadOnly(true);
     contactForm->phoneNumberField->setReadOnly(true);
     contactForm->emailField->setReadOnly(true);
+
 
     setLayout(contactForm);
     setFlat(false);
@@ -45,6 +47,7 @@ void QtContactDetailView::displayContact(Contact::ContactId id)
         contactForm->firstNameField->setText(c.firstName.c_str());
         contactForm->lastNameField->setText(c.lastName.c_str());
         contactForm->addressField->setText(c.address.c_str());
+        contactForm->cityField->setText(c.city.c_str());
         contactForm->phoneNumberField->setText(c.phoneNumber.c_str());
         contactForm->emailField->setText(c.email.c_str());
     }

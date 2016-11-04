@@ -12,9 +12,14 @@ QtAddContactDialog::QtAddContactDialog(Contact &c, QWidget *parent, Qt::WindowFl
     QVBoxLayout *mainContainer = new QVBoxLayout();
     mainContainer->addLayout(contactForm);
 
+
+
+
     QHBoxLayout *buttonContainer = new QHBoxLayout();
     QPushButton *addButton = new QPushButton("Add");
+
     QPushButton *cancelButton = new QPushButton("Cancel");
+
     
     buttonContainer->addWidget(addButton);
     buttonContainer->addWidget(cancelButton);
@@ -25,6 +30,7 @@ QtAddContactDialog::QtAddContactDialog(Contact &c, QWidget *parent, Qt::WindowFl
 
     setLayout(mainContainer);
     setWindowTitle("New Contact");
+
 }
 
 void QtAddContactDialog::accept()
@@ -32,8 +38,10 @@ void QtAddContactDialog::accept()
     outContact.firstName = contactForm->firstNameField->text().toStdString();
     outContact.lastName = contactForm->lastNameField->text().toStdString();
     outContact.address = contactForm->addressField->text().toStdString();
+    outContact.city = contactForm->cityField->text().toStdString();
     outContact.phoneNumber = contactForm->phoneNumberField->text().toStdString();
     outContact.email = contactForm->emailField->text().toStdString();
+
 
     QDialog::accept();
 }

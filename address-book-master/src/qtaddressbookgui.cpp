@@ -1,9 +1,5 @@
-
-
 #include <QMainWindow>
 #include <QPushButton>
-
-
 #include "addressbookview.h"
 #include "addressbookcontroller.h"
 #include "addressbookmodel.h"
@@ -40,14 +36,39 @@ void QtAddressBookGUI::createWidgets()
     list = new QtContactList(dataSource);
     list->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
+
     newContactButton = new QPushButton("New Contact");
+    newContactButton->setObjectName(QString::fromUtf8("newContactButton"));
+    newContactButton->setIcon(QIcon(QPixmap("C:/Users/Administrator/Downloads/address-book-master/Koala.jpg")));
+
+
+
     editContactButton = new QPushButton("Edit");
+    editContactButton->setObjectName(QString::fromUtf8("newContactButton"));
+    editContactButton->setIcon(QIcon(QPixmap("C:/Users/Administrator/Downloads/address-book-master/Tulips.jpg")));
+
+
+
     deleteContactButton = new QPushButton("Delete");
+    deleteContactButton->setObjectName(QString::fromUtf8("newContactButton"));
+    deleteContactButton->setIcon(QIcon(QPixmap("C:/Users/Administrator/Downloads/address-book-master/Penguins.jpg")));
+
+    newContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(20, 40, 210);"));
+    //newContactButton->setStyleSheet(QString::fromUtf8("color:yellow;"));
+    editContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(180, 189, 21);"));
+    deleteContactButton->setStyleSheet(QString::fromUtf8("background-color: rgb(101, 56, 55);"));
+
+
+
+
+
 
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     buttonLayout->addWidget(newContactButton);
     buttonLayout->addWidget(editContactButton);
     buttonLayout->addWidget(deleteContactButton);
+
+
 
     QVBoxLayout *rightSideLayout = new QVBoxLayout();
     rightSideLayout->addWidget(detailView);

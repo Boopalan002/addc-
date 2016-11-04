@@ -1,5 +1,4 @@
 #include "qterrordialog.h"
-
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>

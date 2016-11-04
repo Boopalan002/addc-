@@ -27,6 +27,7 @@ DummyDataSource::DummyDataSource()
         c.firstName = temp;
         c.lastName = temp;
         c.phoneNumber = temp;
+        c.city = temp;
         c.address = temp;
         c.email = temp;
     
